@@ -31,7 +31,6 @@ public class MoveSystem : MonoBehaviour
         }
         if (snap && moving == false)
         {
-            Debug.Log("x: " + runePosition.transform.position.x + "y: " + runePosition.transform.position.y);
             this.transform.position = new Vector3(runePosition.transform.position.x, runePosition.transform.position.y, this.transform.position.z);
         }
     }
