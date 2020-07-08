@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Material
   - Rune
+  - Inventory
   layers:
   - Default
   - TransparentFX
@@ -15,9 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Runes
+  - Material
+  - Inventory
   - 
   - 
   - 
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Material
+    uniqueID: 2494898881
+    locked: 0
+  - name: Runes
+    uniqueID: 2604206495
     locked: 0
