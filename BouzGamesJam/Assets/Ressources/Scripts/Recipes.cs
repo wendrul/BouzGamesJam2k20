@@ -20,8 +20,10 @@ public static class Recipes
         switch (id)
         {
             case Const.rGlass:
+                recipe = GlassRecipe();
                 break;
             case Const.rPlastic:
+                recipe = PlasticRecipe();
                 break;
             default:
                 recipe = null;

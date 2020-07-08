@@ -14,4 +14,11 @@ public class Element
         rune = aRune;
         id = aId;
     }
+
+    public Element(MaterialObject material, int aRune)
+    {
+        quantity = material.Quantity;
+        rune = aRune;
+        id = material.Id;
+    }
 }

@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class MoveSystem : MonoBehaviour
 {
-    private bool snap;
-    private bool moving;
+    [SerializeField] private bool shouldSnap;
+    [SerializeField] private bool isMoving;
 
     private float startPosX;
     private float startPosY;
     private Vector3 resetPosition;
     private Transform runePosition;
+    private Runes rune;
+    private MaterialObject material;
     //public GameObject correctForm;
 
 
     private void Start()
     {
-
+        material = GetComponent<MaterialObject>();
         resetPosition = this.transform.localPosition;
+    }
+    
+    private void OnElementAdd()
+    {
+        rune.Element = new Element(material, rune.id);
     }
     private void Update()
     {
-       if (moving)
+       if (isMoving)
         {
             Vector3 mousePos;
             mousePos = Input.mousePosition;
@@ -29,8 +36,9 @@ public class MoveSystem : MonoBehaviour
          
             this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, this.gameObject.transform.localPosition.z);
         }
-        if (snap && moving == false)
+        if (shouldSnap && !isMoving)
         {
+            OnElementAdd();
             this.transform.position = new Vector3(runePosition.transform.position.x, runePosition.transform.position.y, this.transform.position.z);
         }
     }
@@ -45,7 +53,7 @@ public class MoveSystem : MonoBehaviour
             startPosX = mousePos.x - this.transform.localPosition.x;
             startPosY = mousePos.y - this.transform.localPosition.y;
 
-            moving = true;
+            isMoving = true;
         }
     }
 
@@ -55,8 +63,9 @@ public class MoveSystem : MonoBehaviour
         
         if (collision.tag == "Rune")
         {
-                snap = true;
+                shouldSnap = true;
                 runePosition = collision.gameObject.transform;
+                rune = collision.gameObject.GetComponent<Runes>();
                 //this.transform.parent = collision.gameObject.transform;
         }
     }
@@ -65,13 +74,13 @@ public class MoveSystem : MonoBehaviour
     {
         if (collision.tag == "Rune")
         {
-            snap = false;
+            shouldSnap = false;
         }
     }
     private void OnMouseUp()
     {
         
-        moving = false;
+        isMoving = false;
 
     }
 }

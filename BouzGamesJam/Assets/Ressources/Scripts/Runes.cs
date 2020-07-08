@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Runes : MonoBehaviour
 {
-    public Element element;
+    public Element Element { get; set; }
+    public int id;
     // Start is called before the first frame update
     void Start()
     {
-      
-        
+        Element = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (id == 0 && Element != null)
+        {
+            Debug.Log(Element.id);
+        }
     }
 }
