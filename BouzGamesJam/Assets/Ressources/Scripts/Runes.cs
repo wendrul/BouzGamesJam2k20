@@ -6,6 +6,9 @@ public class Runes : MonoBehaviour
 {
     public Element Element { get; set; }
     public int id;
+
+    //todo: When the element is removed it should go back to null
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,7 @@ public class Runes : MonoBehaviour
     {
         if (id == 0 && Element != null)
         {
-            Debug.Log("HERE: " + Element.id);
+            Debug.Log(Element.id);
         }
     }
 }
