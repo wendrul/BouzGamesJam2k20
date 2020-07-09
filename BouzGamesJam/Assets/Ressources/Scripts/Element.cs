@@ -15,10 +15,10 @@ public class Element
         id = aId;
     }
 
-    public Element(MaterialObject material, int aRune)
+    public Element(Mat  mat, int aRune)
     {
-        quantity = material.Quantity;
+        quantity = mat.Quantity;
         rune = aRune;
-        id = material.Id;
+        id = mat.id;
     }
 }

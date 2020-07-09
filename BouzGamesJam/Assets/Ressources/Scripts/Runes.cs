@@ -6,6 +6,7 @@ public class Runes : MonoBehaviour
 {
     public Element Element { get; set; }
     public int id;
+    public bool IsOccupied { get; set; }
 
     //todo: When the element is removed it should go back to null
 

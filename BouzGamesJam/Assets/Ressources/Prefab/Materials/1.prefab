@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 7690870097989468624}
   - component: {fileID: 8629288551247118928}
   - component: {fileID: 6475205398782265126}
+  - component: {fileID: 1503504495755546017}
   m_Layer: 9
   m_Name: 1
   m_TagString: Material
@@ -465,6 +466,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stacks: 0
   snapBin: 0
+  runePositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &6475205398782265126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,3 +484,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myText: {fileID: 8106666705409345947}
+  id: 0
+--- !u!114 &1503504495755546017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690870097989468634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b11cda52c651f4c90d803c8d54d6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

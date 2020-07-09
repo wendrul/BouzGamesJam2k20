@@ -51,13 +51,13 @@ public class Table : MonoBehaviour
         switch (id)
         {
             case 0:
-                return "Fire";
+                return "Rune0";
             case 1:
-                return "Air";
+                return "Rune1";
             case 2:
-                return "earth";
+                return "Rune2";
             case 3:
-                return "water";
+                return "Rune3";
             default:
                 return null;
         }

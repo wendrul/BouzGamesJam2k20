@@ -7,13 +7,15 @@ public class Mat : MonoBehaviour
 {
     public TextMeshPro myText;
     private int stacks;
-    private int id;
+    public int Quantity { get; set; }
+    public int id;
     private bool snapBin;
 
 
     void Update()
     {
         myText.SetText(stacks.ToString());
+        Quantity = stacks;
     }
 
     public void AddStack()
