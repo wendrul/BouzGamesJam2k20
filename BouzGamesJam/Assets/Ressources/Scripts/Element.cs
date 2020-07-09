@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Element 
+public class Element
 {
     public int quantity;
     public int rune;

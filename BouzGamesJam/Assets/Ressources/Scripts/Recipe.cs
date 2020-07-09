@@ -10,7 +10,7 @@ public class Recipe
     public Recipe(int number, List<Element> elements)
     {
         id = number;
-        elements = materials;
+        materials = elements;
     }
 }
     

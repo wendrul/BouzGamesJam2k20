@@ -17,7 +17,7 @@ public class Runes : MonoBehaviour
     {
         if (id == 0 && Element != null)
         {
-            Debug.Log(Element.id);
+            Debug.Log("HERE: " + Element.id);
         }
     }
 }

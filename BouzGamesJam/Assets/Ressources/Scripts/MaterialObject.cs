@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MaterialObject : MonoBehaviour
 {
-    public int Id {get; private set;}
-    public int Quantity { get; private set; }
+    public int Id;
+    public int Quantity;
 
     // Start is called before the first frame update
     void Start()
