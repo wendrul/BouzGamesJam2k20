@@ -7,6 +7,7 @@ TagManager:
   - Material
   - Rune
   - Inventory
+  - Recycle
   layers:
   - Default
   - TransparentFX

@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class MoveSystem : MonoBehaviour
 {
-	public TextMeshPro myText;
+
 	private bool snap;
     private bool moving;
     private bool over;
     private bool snapInv;
 
+	private GameObject Mat;
     private float centerx;
     private float centery;
 
@@ -19,7 +19,8 @@ public class MoveSystem : MonoBehaviour
     private Vector3 resetPosition;
     private Transform runePosition;
     private Transform materialPosition;
-	public  int stacks;
+	public int stacks;
+	public bool snapBin;
 
     private void Start()
     {
@@ -27,8 +28,6 @@ public class MoveSystem : MonoBehaviour
     }
     void Update()
     {
-		myText.SetText(stacks.ToString());
-
        if (moving)
         {
             Vector3 mousePos;
@@ -64,7 +63,6 @@ public class MoveSystem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
             Vector3 mousePos;
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos); 
@@ -74,6 +72,10 @@ public class MoveSystem : MonoBehaviour
 		}
     }
 
+    public void AddStack()
+	{
+		stacks++;
+	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -83,7 +85,11 @@ public class MoveSystem : MonoBehaviour
                 runePosition = collision.gameObject.transform;
                 //this.transform.parent = collision.gameObject.transform;
         }
-    }
+		if (collision.tag == "Recycle")
+		{
+			snapBin = true;
+		}
+	}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -91,8 +97,13 @@ public class MoveSystem : MonoBehaviour
         {
             snap = false;
         }
+        if (collision.tag == "Recycle")
+		{
+			snapBin = false;
+		}
     }
-    private void OnMouseUp()
+
+	private void OnMouseUp()
     {
         
         moving = false;
